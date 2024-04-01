@@ -10,14 +10,14 @@ headers = {
 
 while True:
 	print('（退出翻译请输入1）')
-	word = input('请输入你想翻译的单词：')
-	if word == '1' :
+	word1 = input('请输入你想翻译的单词：')
+	if word1 == '1' :
 		break
 	data = {
-		'kw':word
+		'kw':word1
 	}
 	# 请求发送
-	response = requests.post(url=post_url,headers=headers,data=data)
+	response = requests.get(url=post_url,headers=headers,data=data)
 	# 获取响应数据：json()方法返回的是obj（如果确认响应数据是json类型的，才可以使用json()）
 	dic_obj = response.json()
 
